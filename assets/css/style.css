@@ -1,64 +1,236 @@
 html {
-  font-size: 26px;
+  font-size: 16px;
 }
-/* variables */
+
 :root {
-  --colorPrincipal: #e5e5e5;
-  --colorSecundario: #609ed4;
-  --colorTerciario: #ffffff;
-  --colorCuatro: #0a3871;
+  --color1: #e5e5e5;
+  --color2: #ffffff;
+  --color3: #0a3871;
+  --color4: #495057;
+  --color5: #f3f5fc;
+  --color6: #343a40;
+  --color7: #547296;
 }
-/* selector */
+
 * {
   box-sizing: border-box;
 }
 
-/* Body */
 body {
-  font-size: 2vw;
-  background: var(--colorPrincipal);
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  position: fixed;
-  justify-content: space-between;
+  background-color: var(--color5);
+  gap: 8px;
+  font-family: "Inter";
+  font-style: normal;
 }
-/* header logo */
-header {
+
+body > header,
+main,
+footer {
   width: 100%;
-  /* height: 48px; */
-  left: 40px;
-  top: 40px;
+  height: 100%;
+  display: flex;
 }
-/* cuerpo página */
+
+header{
+  padding: 15px 0 0 35px;
+}
+
 main {
+  flex: 1 1 90%;
   display: grid;
-  /* height: 90vh; */
-  width: 100vw;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  flex: 1;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
   place-items: center;
+  gap: 15px;
 }
-/* secciones */
+
 .contenedores {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-.grid-item-1 {
-  grid-column: 1 / span 3;
+.textoAdvertencia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contenedores p {
+  color: var(--color4);
 }
 
 .contenedores textarea {
-  height: 30%;
-  width: 69%;
+  height: 65%;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px 0px 0px 20px;
+  resize: none;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.grid-item-1{
+  grid-column: 2/8;
+  gap: 15px;
+}
+.grid-item-1 textarea{
+  color: #609ed4;
+  background: none
+}
+
+::placeholder {
+  color: var(--color3);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 150%;
 }
 
 .grid-item-2 {
-  grid-column: 4 / span 7;
+  grid-column: 9/12;
+  background-color: var(--color2);
+  align-items: center;
+  border-radius: 32px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item-2 h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--color6);
+}
+
+.grid-item-2 p {
+  text-align: center;
+  color: var(--color4);
+}
+
+.grid-item-2 textarea {
+  color: var(--color4);
+}
+
+.cajaBotones {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.botones {
+  width: 80%;
+  border-radius: 24px;
+  height: 57px;
+  border: var(--color3) solid 1px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#botonEncriptar {
+  color: var(--color1);
+  background-color: var(--color3);
+}
+
+#botonDesencriptar {
+  color: var(--color3);
+}
+
+#botonCopiar {
+  height: 45px;
+  color: var(--color3);
+}
+
+.red-social a img {
+  height: 20px;
+}
+
+footer {
+  justify-content: space-between;
+  padding: 8px;
+  border-top: 1px solid var(--color3);
+}
+
+footer > * {
+  color: var(--color7);
+}
+
+footer .red-social {
+  display: flex;
+  gap: 10px;
+}
+
+.red-social a img {
+  height: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 901px) {
+  body {
+    padding: 10px;
+    height: 100%;
+  }
+
+  header {
+    padding: 15px 0 0 10px;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: none;
+  }
+
+  .grid-item-1 {
+    grid-column: 1 / 4;
+    grid-row: 2 / 9;
+  }
+
+  .cajaBotones {
+    flex: 1 1 10%;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .grid-item-1 textarea{
+    height: 80%;
+  }
+
+  .cajaBotones .botones {
+    width: 95%;
+    height: 67px;
+  }
+
+  .grid-item-2 {
+    grid-column: 1 / 4;
+    grid-row: 9 / 13;
+    height: 75%;
+  }
+
+  .grid-item-2 #muneco {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .cajaBotones {
+    flex-direction: column;
+    height: 124px;
+  }
 }

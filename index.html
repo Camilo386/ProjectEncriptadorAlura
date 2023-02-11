@@ -2,54 +2,84 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador</title>
 
-    <!-- RESETCSS -->
+    <!-- RESET CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
 
     <!-- mipropioestilo -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <title>Encriptador</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- header -->
     <header>
-        <!-- imgMiLogo -->
-        <img src="./assets/img/Logo.png" alt="Logo Alura">
+      <!-- imgMiLogo -->
+      <img src="./assets/img/Logo.png" alt="Logo Alura" />
     </header>
     <!-- Cuerpo  -->
     <main>
-        <!-- deseencriptador -->
-        <section class="contenedores grid-item-1">
-            <!-- textoDeEntrada -->
-            <textarea id="textoEntrada"></textarea>
-            <!-- contenedorDeBotones -->
-            <div id="cajaBotones">
-                <button id="btn-encriptar" class="botones">Encriptar</button>
-                <button id="btn-desencriptar" class="botones">Desencriptar</button>
-            </div>
-        </section>
-        <!-- encriptador -->
-        <section class="contenedores grid-item-2">
-            <!-- textoEncriptado -->
-            <textarea id="textoSalida"></textarea>
-            <!-- textos -->
-            <h3>Ningún mensaje fue encontrado</h3>
-            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-            <!-- botonCopiar -->
-            <button id="bt-copiar" class="botones">Copiar</button>
-        </section>
+      <!-- deseencriptador -->
+      <section class="contenedores grid-item-1">
+        <!-- textoDeEntrada -->
+        <textarea
+          id="textoEntrada"
+          placeholder="Escribe tu texto aqui"
+        ></textarea>
+        <div class="textoAdvertencia">
+          <img src="./assets/img/exclamation.png" />
+          Solo letras minúsculas y sin acentos
+        </div>
+        <!-- contenedorDeBotones -->
+        <div class="cajaBotones">
+          <button id="botonEncriptar" class="botones">Encriptar</button>
+          <button id="botonDesencriptar" class="botones">Desencriptar</button>
+        </div>
+      </section>
+      <!-- encriptador -->
+      <section class="contenedores grid-item-2">
+        <!-- textoEncriptado -->
+        <img id="muneco" src="./assets/img/muneco.png" width="200" alt="" id="muneco" />
+        <textarea
+          id="textoSalida"
+          placeholder="Texto encriptado"
+          class="hide"
+          disabled
+        ></textarea>
+        <!-- textos -->
+        <h1 id= "title">Ningún mensaje fue encontrado</h3>
+        <p id="parrafo">
+          Ingresa el texto que desees encriptar o desencriptar.
+        </p>
+        <!-- botonCopiar -->
+        <button id="botonCopiar" class="botones hide">Copiar</button>
+      </section>
     </main>
     <!-- Footer -->
     <footer>
-       <!-- redesSociales -->
-       <h1>copyrigth</h1>
-       <h2>hola de nuevo</h2>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
+      <!-- Copy -->
+      <h1>Copyright &copy;</h1>
+      <!-- Alumno -->
+      <h1>Juan Camilo Agudelo</h1>
+      <!-- redes sociales -->
+      <div class="red-social">
+        <a href="https://github.com/">
+          <img src="./assets/img/github.svg" alt="" />
+        </a>
+        <a href="https://www.linkedin.com/">
+          <img src="./assets/img/linkedin.svg" alt="" />
+        </a>
+      </div>
     </footer>
+    <script src="./assets/js/scripts.js"></script>
   </body>
 </html>
